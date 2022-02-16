@@ -3,32 +3,32 @@
 #include "alg.h"
 
 bool checkPrime(uint64_t value) {
-	bool temp = true;
-	for (uint64_t i = 2; i < value; ++i)
-		if (value % i == 0)
-			temp = false;
-	return temp;
+  bool temp = true;
+  for (uint64_t i = 2; i < value; ++i)
+    if (value % i == 0)
+      temp = false;
+  return temp;
 }
 
 uint64_t nPrime(uint64_t n) {
-	uint64_t count = 0, a = 2;
-	while (count != n)
-		if (checkPrime(a))
-			count++;
-	return a;
+  uint64_t count = 0, a = 2;
+  while (count != n)
+    if (checkPrime(a))
+      count++;
+  return a;
 }
 
 uint64_t nextPrime(uint64_t value) {
-	uint64_t a = value + 1;
-	while (checkPrime(a) != true)
-		a++;
-	return a;
+  uint64_t a = value + 1;
+  while (checkPrime(a) != true)
+    a++;
+  return a;
 }
 
 uint64_t sumPrime(uint64_t hbound) {
-	uint64_t s = 0;
-	for (uint64_t i = 2; i < hbound; ++i)
-		if (checkPrime(i))
-			s += i;
-	return s;
+  uint64_t s = 0;
+  for (uint64_t i = 2; i < hbound; ++i)
+    if (checkPrime(i))
+      s += i;
+  return s;
 }
