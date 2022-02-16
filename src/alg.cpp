@@ -3,13 +3,12 @@
 #include "alg.h"
 
 bool checkPrime(uint64_t value) {
-  bool temp = true;
   if (value == 1 || value == 0)
       return false;
   for (uint64_t i = 2; i < value; ++i)
     if (value % i == 0)
-      temp = false;
-  return temp;
+      return false;
+  return true;
 }
 
 uint64_t nPrime(uint64_t n) {
